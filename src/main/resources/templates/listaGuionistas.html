@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html"></meta>
+    <title>Producciones Pomponio</title>
+</head>
+<body>
+<a href="/index">Home</a>
+<h1>Guionistas</h1>
+<h3><a href="/formularioGuionista">Registrar guionista</a></h3>
+<ul>
+    <div th:each="entry,status : ${guionistas}">
+        <li>
+            <div>
+                <div>
+                    <h4>Nombre: <span th:text="${entry.nombre}"></span></h4>
+                    <p>Direccion: <span th:text="${entry.direccion}"></span></p>
+                    <p>Email: <span th:text="${entry.email}"></span></p>
+                    <p>Fecha de nacimiento: <span th:text="${entry.fechaNacimiento}"></span></p>
+                </div>
+            </div>
+        </li>
+    </div>
+</ul>
+</body>
+</html>

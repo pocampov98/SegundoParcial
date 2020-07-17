@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html"></meta>
+    <title>Producciones Pomponio</title>
+</head>
+<body>
+    <a href="/index">Home</a>
+    <h1>Asignar actores al guion</h1>
+    <form action="#" th:action="@{/asignarActores(idGuion=${guion.get().getId()})}" method="post">
+        <p>Actores:</p>
+        <select th:name="idActor">
+            <option th:each="entry : ${actores}"
+                    th:value="${entry.id}"
+                    th:text="${entry.nombre}">
+            </option>
+        </select>
+        <p>Actrizes:</p>
+        <select th:name="idActriz">
+            <option th:each="entry : ${actrizes}"
+                    th:value="${entry.id}"
+                    th:text="${entry.nombre}">
+            </option>
+        </select>
+        <p><input type="submit" value="Guardar"/></p>
+    </form>
+</body>
+</html>

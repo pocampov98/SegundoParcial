@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html"></meta>
+    <title>Producciones Pomponio</title>
+</head>
+
+<body>
+    <a href="/index">Home</a>
+
+    <h1>Actores</h1>
+    <h3><a href="/formularioActor">Registrar actor</a></h3>
+
+    <h4>Filtrar</h4>
+    <form action="#" th:action="@{/filtrarListaActores}" method="get">
+        <p>Nombre: <input type="text" th:name="nombre"/></p>
+        <a>Rango de edad: </a>
+        <select th:name="edad">
+            <option th:value=0 >Cualquiera</option>
+            <option th:value=1 >18 o menos</option>
+            <option th:value=2 >19 - 30</option>
+            <option th:value=3 >31 - 40</option>
+            <option th:value=4 >41 - 60</option>
+            <option th:value=5 >61 o mas</option>
+        </select>
+        <p><input type="submit" value="Buscar"/></p>
+    </form>
+    <ul>
+        <div th:each="entry,status : ${actores}">
+            <li>
+                <div>
+                    <div>
+                        <h4>Nombre: <span th:text="${entry.nombre}"></span></h4>
+                        <p>Genero: <span th:text="${entry.genero}"></span></p>
+                        <p>Fecha de nacimiento: <span th:text="${entry.fechaNacimiento}"></span></p>
+                        <p>Estatura(cm): <span th:text="${entry.estatura}"></span></p>
+                        <p>Complexion: <span th:text="${entry.complexion}"></span></p>
+                        <p>Color de ojos: <span th:text="${entry.colorOjos}"></span></p>
+                        <p>Color de pelo: <span th:text="${entry.colorPelo}"></span></p>
+                    </div>
+                </div>
+            </li>
+        </div>
+    </ul>
+</body>
+</html>

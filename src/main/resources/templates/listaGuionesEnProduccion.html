@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html"></meta>
+    <title>Producciones Pomponio</title>
+</head>
+<body>
+    <a href="/index">Home</a>
+    <h1>Guiones en produccion</h1>
+    <br>
+    <ul>
+        <div th:each="entry,status : ${guiones}">
+            <li>
+                <div>
+                    <div>
+                        <h4>Nombre:
+                            <a th:href="@{/formularioAsignarActores(idGuion=${entry.getId()})}">
+                                <span th:text="${entry.nombre}"></span>
+                            </a>
+                        </h4>
+                        <p>Autor: <span th:text="${entry.nombreGuionista}"></span></p>
+                        <p>Genero: <span th:text="${entry.genero}"></span></p>
+                        <p>Idea central: <span th:text="${entry.ideaCentral}"></span></p>
+                        <p>Actor principal:
+                            <span th:text="${entry.nombreActorPrincipal.equalsIgnoreCase('')} ? 'No asignado':${entry.nombreActorPrincipal}"></span>
+                        </p>
+                        <p>Actriz principal:
+                            <span th:text="${entry.nombreActrizPrincipal.equalsIgnoreCase('')} ? 'No asignada':${entry.nombreActrizPrincipal}"></span>
+                        </p>
+                    </div>
+                </div>
+            </li>
+        </div>
+    </ul>
+</body>
+</html>

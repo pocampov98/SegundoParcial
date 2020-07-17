@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html"></meta>
+    <title>Producciones Pomponio</title>
+</head>
+<body>
+    <a href="/index">Home</a>
+    <h1>Registrar guionista</h1>
+    <form action="#" th:action="@{/guionistas}" th:object="${guionista}" method="post">
+        <p>Nombre: <input type="text" th:field="*{nombre}"/></p>
+        <p>Direccion: <input type="text" th:field="*{direccion}"/></p>
+        <p>Email: <input type="text" th:field="*{email}"/></p>
+        <p>Fecha de nacimiento: <input type="date" th:field="*{fechaNacimiento}"/></p>
+        <p><input type="submit" value="Guardar" /></p>
+    </form>
+</body>
+</html>

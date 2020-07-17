@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html"></meta>
+    <title>Producciones Pomponio</title>
+</head>
+<body>
+    <a href="/index">Home</a>
+    <h1>Registrar Actor</h1>
+    <form action="#" th:action="@{/actores}" th:object="${actor}" method="post">
+        <p>Nombre: <input type="text" th:field="*{nombre}"/></p>
+        <p>Genero:</p>
+        <select th:field="*{genero}">
+            <option th:value="Hombre" th:text="Hombre"></option>
+            <option th:value="Mujer" th:text="Mujer"></option>
+            <option th:value="Otro" th:text="Otro"></option>
+        </select>
+        <p>Fecha de nacimiento: <input type="date" th:field="*{fechaNacimiento}"/></p>
+        <p>Estatura(cm): <input type="number" th:field="*{estatura}"/></p>
+        <p>Complexion:</p>
+        <select th:field="*{complexion}">
+            <option th:value="Flaco" th:text="Flaco"></option>
+            <option th:value="Regular" th:text="Regular"></option>
+            <option th:value="Grueso" th:text="Grueso"></option>
+        </select>
+        <p>Color de ojos: <input type="text" th:field="*{colorOjos}"/></p>
+        <p>Color de pelo: <input type="text" th:field="*{colorPelo}"/></p>
+        <p><input type="submit" value="Guardar" /></p>
+    </form>
+</body>
+</html>

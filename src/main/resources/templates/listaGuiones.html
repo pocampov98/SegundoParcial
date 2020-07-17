@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html"></meta>
+    <title>Producciones Pomponio</title>
+</head>
+<body>
+    <a href="/index">Home</a>
+    <h1>Guiones</h1>
+    <h3><a href="/formularioGuionista">Registrar guionista</a></h3>
+    <h3><a href="/formularioGuion">Registrar guion</a></h3>
+    <br>
+    <h4>Filtrar</h4>
+    <form action="#" th:action="@{/filtrarListaGuiones}" method="get">
+        <p>Nombre: <input type="text" th:name="nombre"/></p>
+        <a>Genero:</a>
+        <select th:name="genero">
+            <option th:value="''" th:text="Cualquiera"></option>
+            <option th:value="Tragedia" th:text="Tragedia"></option>
+            <option th:value="Comedia" th:text="Comedia"></option>
+            <option th:value="Culebron" th:text="Culebron"></option>
+            <option th:value="Fantasia" th:text="Fantasia"></option>
+        </select>
+        <p><input type="submit" value="Buscar"/></p>
+    </form>
+    <ul>
+        <div th:each="entry,status : ${guiones}">
+            <li>
+                <div>
+                    <div>
+                        <h4>Nombre: <span th:text="${entry.nombre}"></span></h4>
+                        <p>Autor: <span th:text="${entry.nombreGuionista}"></span></p>
+                        <p>Genero: <span th:text="${entry.genero}"></span></p>
+                        <p>Idea central: <span th:text="${entry.ideaCentral}"></span></p>
+                        <p>Estado de produccion: <span th:text="${entry.listoProduccion} ? 'Listo' : 'En preparacion'" ></span></p>
+                        <form action="#" th:action="@{/actualizarEstadoProduccion}" method="post">
+                            <p><button type="submit" th:name="id" th:value="${entry.id}">Listo para produccion</button></p>
+                        </form>
+                    </div>
+                </div>
+            </li>
+        </div>
+    </ul>
+</body>
+</html>
