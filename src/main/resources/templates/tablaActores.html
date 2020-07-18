@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html"></meta>
+    <title>Producciones Pomponio</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+</head>
+
+<body>
+    <a href="/index">Home</a>
+
+    <h1>Actores</h1>
+    
+    <table id="table_id" class="display">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Genero</th>
+                <th>Fecha de nacimiento</th>
+                <th>Estatura(cm)</th>
+                <th>Complexion</th>
+                <th>Color de ojos</th>
+                <th>Color de pelo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="entry,status : ${actores}">
+                <td><span th:text="${entry.nombre}"></span></td>
+                <td><span th:text="${entry.genero}"></span></td>
+                <td> <span th:text="${#dates.format(entry.fechaNacimiento,'yyyy-MM-dd')}"></span></td>
+                <td><span th:text="${entry.estatura}"></span></td>
+                <td><span th:text="${entry.complexion}"></span></td>
+                <td><span th:text="${entry.colorOjos}"></span></td>
+                <td><span th:text="${entry.colorPelo}"></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+    <script>
+        $(document).ready( function () {
+            $('#table_id').DataTable();
+        });    
+    </script>
+</body>  
+</html>

@@ -33,6 +33,12 @@ public class ActorController {
         return "listaActores";
     }
 
+    @RequestMapping("/tablaActores")
+    public String showTablaActores(Model model){
+        model.addAttribute("actores", actorService.readActores());
+        return "tablaActores";
+    }
+
     @RequestMapping("/filtrarListaActores")
     public String showListaActoresPorNombreYEdad(
             @RequestParam(value = "nombre", required = false) String nombre,

@@ -17,11 +17,12 @@ public class SegundoParcialApplication {
 	@Bean
 	InitializingBean saveDataActores(ActorRepository repo){
 		return () -> {
-			repo.save(new Actor("Leonardo DiCaprio","Hombre", new SimpleDateFormat("yyyy-MM-dd").parse("1974-11-11"),175,"Flaco","Verde","Cafe"));
-			repo.save(new Actor("Ellen Page","Mujer", new SimpleDateFormat("yyyy-MM-dd").parse("1987-11-11"),175,"Flaco","Verde","Cafe"));
-			repo.save(new Actor("Joseph Gordon-Levitt","Hombre", new SimpleDateFormat("yyyy-MM-dd").parse("1998-11-11"),175,"Flaco","Verde","Cafe"));
-			repo.save(new Actor("Robert De Niro","Hombre", new SimpleDateFormat("yyyy-MM-dd").parse("1943-11-11"),175,"Flaco","Verde","Cafe"));
-			repo.save(new Actor("Daniel Donatto","Hombre", new SimpleDateFormat("yyyy-MM-dd").parse("2007-11-11"),175,"Flaco","Verde","Cafe"));
+			repo.save(new Actor("Leonardo Rodriguez","Hombre", new SimpleDateFormat("yyyy-MM-dd").parse("1974-11-11"),175,"Regular","Verde","Cafe"));
+			repo.save(new Actor("Ellen Morales","Mujer", new SimpleDateFormat("yyyy-MM-dd").parse("1987-10-11"),168,"Flaco","Azul","Rubio"));
+			repo.save(new Actor("Marta Campos","Mujer", new SimpleDateFormat("yyyy-MM-dd").parse("1987-10-11"),168,"Flaco","Azul","Rubio"));
+			repo.save(new Actor("Joseph Massey","Hombre", new SimpleDateFormat("yyyy-MM-dd").parse("1998-12-18"),180,"Flaco","Cafe","Cafe"));
+			repo.save(new Actor("Robert Solano","Hombre", new SimpleDateFormat("yyyy-MM-dd").parse("1943-11-11"),170,"Grueso","Verde","Cafe"));
+			repo.save(new Actor("Daniel Cordero","Hombre", new SimpleDateFormat("yyyy-MM-dd").parse("2007-10-15"),162,"Flaco","Azul","Cafe"));
 		};
 	}
 

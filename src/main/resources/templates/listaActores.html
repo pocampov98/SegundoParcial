@@ -34,7 +34,7 @@
                     <div>
                         <h4>Nombre: <span th:text="${entry.nombre}"></span></h4>
                         <p>Genero: <span th:text="${entry.genero}"></span></p>
-                        <p>Fecha de nacimiento: <span th:text="${entry.fechaNacimiento}"></span></p>
+                        <p>Fecha de nacimiento: <span th:text="${#dates.format(entry.fechaNacimiento,'yyyy-MM-dd')}"></span></p>
                         <p>Estatura(cm): <span th:text="${entry.estatura}"></span></p>
                         <p>Complexion: <span th:text="${entry.complexion}"></span></p>
                         <p>Color de ojos: <span th:text="${entry.colorOjos}"></span></p>

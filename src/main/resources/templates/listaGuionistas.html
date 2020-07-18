@@ -18,7 +18,7 @@
                     <h4>Nombre: <span th:text="${entry.nombre}"></span></h4>
                     <p>Direccion: <span th:text="${entry.direccion}"></span></p>
                     <p>Email: <span th:text="${entry.email}"></span></p>
-                    <p>Fecha de nacimiento: <span th:text="${entry.fechaNacimiento}"></span></p>
+                    <p>Fecha de nacimiento: <span th:text="${#dates.format(entry.fechaNacimiento,'yyyy-MM-dd')}"></span></p>
                 </div>
             </div>
         </li>
